@@ -82,7 +82,6 @@ public abstract class BaseService extends Service {
                         } catch (InterruptedException e) {
                             // if got interrupted, end up the thread loop
                             isRunning = false;
-                            e.printStackTrace();
                         }
                     }
                 }

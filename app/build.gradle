@@ -1,25 +1,32 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'me.tatarka.retrolambda'
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.1.0"
+	compileSdkVersion 23
+	buildToolsVersion "23.0.1"
 
-    defaultConfig {
-        applicationId "de.unicate.serviceexamples"
-        minSdkVersion 10
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
-    }
-    buildTypes {
-        release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+	defaultConfig {
+		applicationId "de.unicate.serviceexamples"
+		minSdkVersion 10
+		targetSdkVersion 23
+		versionCode 1
+		versionName "1.0"
+	}
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+	}
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+
+	dataBinding {
+		enabled = true
+	}
 }
 
 dependencies {
-//    compile fileTree(dir: 'libs', include: ['*.jar'])
-//    compile 'com.jakewharton:butterknife:5.1.2'
+
 }
